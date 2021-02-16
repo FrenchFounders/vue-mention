@@ -13,6 +13,11 @@ export default {
   inheritAttrs: false,
 
   props: {
+    popoverBaseClass: {
+      type: String,
+      default: 'tooltip popover',
+    },
+    
     keys: {
       type: Array,
       required: true,
@@ -360,6 +365,7 @@ export default {
       :auto-hide="false"
       class="popper"
       style="position:absolute;"
+      :popover-base-class="popoverBaseClass"
       :style="caretPosition ? {
         top: `${caretPosition.top}px`,
         left: `${caretPosition.left}px`,
